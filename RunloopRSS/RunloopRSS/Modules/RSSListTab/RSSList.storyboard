@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List View Controller-->
+        <scene sceneID="exn-GT-IoU">
+            <objects>
+                <viewController storyboardIdentifier="RSSListViewController" id="m5r-tf-IJT" customClass="RSSListViewController" customModule="RunloopRSS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T3Y-us-3aW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="voL-fJ-qfF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="m5r-tf-IJT" id="vUD-aA-EdC"/>
+                                    <outlet property="delegate" destination="m5r-tf-IJT" id="gSn-jY-JCB"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjG-ks-HUW">
+                                <rect key="frame" x="40" y="787" width="334" height="60"/>
+                                <subviews>
+                                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RN-iZ-jwv">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bsh-yN-q6f">
+                                        <rect key="frame" x="15" y="16" width="304" height="29"/>
+                                        <segments>
+                                            <segment title="Business News"/>
+                                            <segment title="Entertainment"/>
+                                        </segments>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="segmentedControlClicked:" destination="m5r-tf-IJT" eventType="valueChanged" id="oxJ-Ao-Wpm"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GlN-1q-CrB"/>
+                                    <constraint firstItem="bsh-yN-q6f" firstAttribute="centerY" secondItem="TjG-ks-HUW" secondAttribute="centerY" id="JYT-v9-QFp"/>
+                                    <constraint firstAttribute="bottom" secondItem="9RN-iZ-jwv" secondAttribute="bottom" id="Jh2-Cd-Njt"/>
+                                    <constraint firstItem="9RN-iZ-jwv" firstAttribute="top" secondItem="TjG-ks-HUW" secondAttribute="top" id="Z7C-Ql-rNT"/>
+                                    <constraint firstAttribute="trailing" secondItem="bsh-yN-q6f" secondAttribute="trailing" constant="15" id="hpg-DD-fcd"/>
+                                    <constraint firstItem="bsh-yN-q6f" firstAttribute="leading" secondItem="TjG-ks-HUW" secondAttribute="leading" constant="15" id="m4t-Nl-si1"/>
+                                    <constraint firstItem="9RN-iZ-jwv" firstAttribute="leading" secondItem="zMH-Ih-2Sh" secondAttribute="leading" id="pTf-Ze-k5o"/>
+                                    <constraint firstItem="zMH-Ih-2Sh" firstAttribute="trailing" secondItem="9RN-iZ-jwv" secondAttribute="trailing" id="zqY-zQ-6jK"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="zMH-Ih-2Sh"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="voL-fJ-qfF" firstAttribute="top" secondItem="Mxc-NT-iqm" secondAttribute="top" id="XIv-BP-OTT"/>
+                            <constraint firstAttribute="bottom" secondItem="voL-fJ-qfF" secondAttribute="bottom" id="cN8-Yz-Ypb"/>
+                            <constraint firstItem="Mxc-NT-iqm" firstAttribute="trailing" secondItem="TjG-ks-HUW" secondAttribute="trailing" constant="40" id="esi-Zf-c5Y"/>
+                            <constraint firstAttribute="trailing" secondItem="voL-fJ-qfF" secondAttribute="trailing" id="fo4-ZA-nhN"/>
+                            <constraint firstItem="TjG-ks-HUW" firstAttribute="leading" secondItem="Mxc-NT-iqm" secondAttribute="leading" constant="40" id="kel-Nc-5dE"/>
+                            <constraint firstItem="Mxc-NT-iqm" firstAttribute="bottom" secondItem="TjG-ks-HUW" secondAttribute="bottom" constant="15" id="t5i-FK-ULn"/>
+                            <constraint firstItem="voL-fJ-qfF" firstAttribute="leading" secondItem="T3Y-us-3aW" secondAttribute="leading" id="ubm-5J-3dY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mxc-NT-iqm"/>
+                    </view>
+                    <connections>
+                        <outlet property="segmentBackgroundView" destination="9RN-iZ-jwv" id="hT4-X3-xhl"/>
+                        <outlet property="segmentedControl" destination="bsh-yN-q6f" id="3UM-zx-kcY"/>
+                        <outlet property="tableView" destination="voL-fJ-qfF" id="Kqu-SN-gYD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJj-0w-WCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.7971014492753632" y="130.58035714285714"/>
+        </scene>
+    </scenes>
+</document>

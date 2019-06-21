@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+
+use_frameworks!
+inhibit_all_warnings!
+
+target ‘RunloopRSS’ do
+pod 'Kingfisher'
+pod 'SVProgressHUD'
+pod 'SWXMLHash', '~> 4.7.0'
+pod 'FeedKit', '~> 8.0'
+end

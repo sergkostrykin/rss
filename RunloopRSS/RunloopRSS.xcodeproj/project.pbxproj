@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C3E201022BD17B300CD5C5B /* URNNetworkingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E200D22BD17B300CD5C5B /* URNNetworkingConstants.swift */; };
+		5C3E201222BD17B300CD5C5B /* URNNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E200F22BD17B300CD5C5B /* URNNetworking.swift */; };
+		5CF3A9D522BA64CD00D965CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3A9D422BA64CD00D965CE /* AppDelegate.swift */; };
+		5CF3A9DC22BA64CF00D965CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3A9DB22BA64CF00D965CE /* Assets.xcassets */; };
+		5CF3A9DF22BA64CF00D965CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3A9DD22BA64CF00D965CE /* LaunchScreen.storyboard */; };
+		5CF3A9EB22BA82DD00D965CE /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3A9EA22BA82DD00D965CE /* AppRouter.swift */; };
+		5CF3AA1F22BA92F800D965CE /* FeedItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3AA0F22BA92F800D965CE /* FeedItemTableViewCell.xib */; };
+		5CF3AA2022BA92F800D965CE /* FeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1022BA92F800D965CE /* FeedItemTableViewCell.swift */; };
+		5CF3AA2122BA92F800D965CE /* RSSListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1122BA92F800D965CE /* RSSListPresenter.swift */; };
+		5CF3AA2222BA92F800D965CE /* RSSListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1222BA92F800D965CE /* RSSListViewController.swift */; };
+		5CF3AA2322BA92F800D965CE /* RSSList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1322BA92F800D965CE /* RSSList.storyboard */; };
+		5CF3AA2422BA92F800D965CE /* RSSListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1422BA92F800D965CE /* RSSListScreen.swift */; };
+		5CF3AA2622BA92F800D965CE /* MovieTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1822BA92F800D965CE /* MovieTitleTableViewCell.xib */; };
+		5CF3AA2722BA92F800D965CE /* MovieTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1922BA92F800D965CE /* MovieTitleTableViewCell.swift */; };
+		5CF3AA2822BA92F800D965CE /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1A22BA92F800D965CE /* DetailsScreen.swift */; };
+		5CF3AA2922BA92F800D965CE /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1B22BA92F800D965CE /* DetailsPresenter.swift */; };
+		5CF3AA2A22BA92F800D965CE /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1C22BA92F800D965CE /* DetailsView.swift */; };
+		5CF3AA2B22BA92F800D965CE /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1D22BA92F800D965CE /* Details.storyboard */; };
+		5CF3AA2C22BA92F800D965CE /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1E22BA92F800D965CE /* DetailsViewController.swift */; };
+		5CF3AF5622BA9C7A00D965CE /* NSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF4C22BA9C7A00D965CE /* NSErrorExtension.swift */; };
+		5CF3AF5722BA9C7A00D965CE /* DateTimeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF4D22BA9C7A00D965CE /* DateTimeTools.swift */; };
+		5CF3AF5822BA9C7A00D965CE /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF4E22BA9C7A00D965CE /* UITableViewExtension.swift */; };
+		5CF3AF5922BA9C7A00D965CE /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF4F22BA9C7A00D965CE /* UIViewControllerExtensions.swift */; };
+		5CF3AF5A22BA9C7A00D965CE /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF5022BA9C7A00D965CE /* UIViewExtensions.swift */; };
+		5CF3AF5B22BA9C7A00D965CE /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF5122BA9C7A00D965CE /* StringExtension.swift */; };
+		5CF3AF5C22BA9C7A00D965CE /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF5222BA9C7A00D965CE /* UIColorExtensions.swift */; };
+		5CF3AF5D22BA9C7A00D965CE /* RSSItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF5422BA9C7A00D965CE /* RSSItem.swift */; };
+		5CF3AF5E22BA9C7A00D965CE /* RSSList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF5522BA9C7A00D965CE /* RSSList.swift */; };
+		9D029510602E4AD2F7085D80 /* Pods_RunloopRSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03E68C66688EFA3E766AD2 /* Pods_RunloopRSS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F1E90EC6849A9388F6E1764 /* Pods-RunloopRSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunloopRSS.release.xcconfig"; path = "Target Support Files/Pods-RunloopRSS/Pods-RunloopRSS.release.xcconfig"; sourceTree = "<group>"; };
+		5C3E200D22BD17B300CD5C5B /* URNNetworkingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URNNetworkingConstants.swift; sourceTree = "<group>"; };
+		5C3E200F22BD17B300CD5C5B /* URNNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URNNetworking.swift; sourceTree = "<group>"; };
+		5CF3A9D122BA64CD00D965CE /* RunloopRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunloopRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF3A9D422BA64CD00D965CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5CF3A9DB22BA64CF00D965CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5CF3A9DE22BA64CF00D965CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5CF3A9E022BA64CF00D965CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CF3A9EA22BA82DD00D965CE /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		5CF3AA0F22BA92F800D965CE /* FeedItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedItemTableViewCell.xib; sourceTree = "<group>"; };
+		5CF3AA1022BA92F800D965CE /* FeedItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItemTableViewCell.swift; sourceTree = "<group>"; };
+		5CF3AA1122BA92F800D965CE /* RSSListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSListPresenter.swift; sourceTree = "<group>"; };
+		5CF3AA1222BA92F800D965CE /* RSSListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSListViewController.swift; sourceTree = "<group>"; };
+		5CF3AA1322BA92F800D965CE /* RSSList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RSSList.storyboard; sourceTree = "<group>"; };
+		5CF3AA1422BA92F800D965CE /* RSSListScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSListScreen.swift; sourceTree = "<group>"; };
+		5CF3AA1822BA92F800D965CE /* MovieTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTitleTableViewCell.xib; sourceTree = "<group>"; };
+		5CF3AA1922BA92F800D965CE /* MovieTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTitleTableViewCell.swift; sourceTree = "<group>"; };
+		5CF3AA1A22BA92F800D965CE /* DetailsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
+		5CF3AA1B22BA92F800D965CE /* DetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		5CF3AA1C22BA92F800D965CE /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		5CF3AA1D22BA92F800D965CE /* Details.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		5CF3AA1E22BA92F800D965CE /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		5CF3AF4C22BA9C7A00D965CE /* NSErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtension.swift; sourceTree = "<group>"; };
+		5CF3AF4D22BA9C7A00D965CE /* DateTimeTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeTools.swift; sourceTree = "<group>"; };
+		5CF3AF4E22BA9C7A00D965CE /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		5CF3AF4F22BA9C7A00D965CE /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		5CF3AF5022BA9C7A00D965CE /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		5CF3AF5122BA9C7A00D965CE /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		5CF3AF5222BA9C7A00D965CE /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		5CF3AF5422BA9C7A00D965CE /* RSSItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSItem.swift; sourceTree = "<group>"; };
+		5CF3AF5522BA9C7A00D965CE /* RSSList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSList.swift; sourceTree = "<group>"; };
+		5F03E68C66688EFA3E766AD2 /* Pods_RunloopRSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunloopRSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66D799D2E1F32A5DE3AD1FC4 /* Pods-RunloopRSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunloopRSS.debug.xcconfig"; path = "Target Support Files/Pods-RunloopRSS/Pods-RunloopRSS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5CF3A9CE22BA64CD00D965CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D029510602E4AD2F7085D80 /* Pods_RunloopRSS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C10839ABD8460CDA37E35E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				66D799D2E1F32A5DE3AD1FC4 /* Pods-RunloopRSS.debug.xcconfig */,
+				4F1E90EC6849A9388F6E1764 /* Pods-RunloopRSS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5C3E200A22BD179D00CD5C5B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5C3E200C22BD17A400CD5C5B /* Networking */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		5C3E200C22BD17A400CD5C5B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5C3E200F22BD17B300CD5C5B /* URNNetworking.swift */,
+				5C3E200D22BD17B300CD5C5B /* URNNetworkingConstants.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5CF3A9C822BA64CD00D965CE = {
+			isa = PBXGroup;
+			children = (
+				5CF3A9D322BA64CD00D965CE /* RunloopRSS */,
+				5CF3A9D222BA64CD00D965CE /* Products */,
+				4C10839ABD8460CDA37E35E0 /* Pods */,
+				C008B72D42BFA71CC643952E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5CF3A9D222BA64CD00D965CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3A9D122BA64CD00D965CE /* RunloopRSS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5CF3A9D322BA64CD00D965CE /* RunloopRSS */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3A9EC22BA82F700D965CE /* Modules */,
+				5CF3A9E922BA82A200D965CE /* SupportingFiles */,
+				5CF3A9E822BA719E00D965CE /* Shared */,
+				5CF3A9D422BA64CD00D965CE /* AppDelegate.swift */,
+				5CF3A9EA22BA82DD00D965CE /* AppRouter.swift */,
+			);
+			path = RunloopRSS;
+			sourceTree = "<group>";
+		};
+		5CF3A9E822BA719E00D965CE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5C3E200A22BD179D00CD5C5B /* Services */,
+				5CF3AF4B22BA9C7A00D965CE /* Extensions */,
+				5CF3AF5322BA9C7A00D965CE /* Models */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		5CF3A9E922BA82A200D965CE /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3A9DB22BA64CF00D965CE /* Assets.xcassets */,
+				5CF3A9DD22BA64CF00D965CE /* LaunchScreen.storyboard */,
+				5CF3A9E022BA64CF00D965CE /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		5CF3A9EC22BA82F700D965CE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3AA1622BA92F800D965CE /* DetailsTab */,
+				5CF3AA0D22BA92F800D965CE /* RSSListTab */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5CF3AA0D22BA92F800D965CE /* RSSListTab */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3AA0E22BA92F800D965CE /* Cells */,
+				5CF3AA1122BA92F800D965CE /* RSSListPresenter.swift */,
+				5CF3AA1222BA92F800D965CE /* RSSListViewController.swift */,
+				5CF3AA1322BA92F800D965CE /* RSSList.storyboard */,
+				5CF3AA1422BA92F800D965CE /* RSSListScreen.swift */,
+			);
+			path = RSSListTab;
+			sourceTree = "<group>";
+		};
+		5CF3AA0E22BA92F800D965CE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3AA0F22BA92F800D965CE /* FeedItemTableViewCell.xib */,
+				5CF3AA1022BA92F800D965CE /* FeedItemTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5CF3AA1622BA92F800D965CE /* DetailsTab */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3AA1722BA92F800D965CE /* Cells */,
+				5CF3AA1A22BA92F800D965CE /* DetailsScreen.swift */,
+				5CF3AA1B22BA92F800D965CE /* DetailsPresenter.swift */,
+				5CF3AA1C22BA92F800D965CE /* DetailsView.swift */,
+				5CF3AA1D22BA92F800D965CE /* Details.storyboard */,
+				5CF3AA1E22BA92F800D965CE /* DetailsViewController.swift */,
+			);
+			path = DetailsTab;
+			sourceTree = "<group>";
+		};
+		5CF3AA1722BA92F800D965CE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3AA1822BA92F800D965CE /* MovieTitleTableViewCell.xib */,
+				5CF3AA1922BA92F800D965CE /* MovieTitleTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5CF3AF4B22BA9C7A00D965CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3AF4C22BA9C7A00D965CE /* NSErrorExtension.swift */,
+				5CF3AF4D22BA9C7A00D965CE /* DateTimeTools.swift */,
+				5CF3AF4E22BA9C7A00D965CE /* UITableViewExtension.swift */,
+				5CF3AF4F22BA9C7A00D965CE /* UIViewControllerExtensions.swift */,
+				5CF3AF5022BA9C7A00D965CE /* UIViewExtensions.swift */,
+				5CF3AF5122BA9C7A00D965CE /* StringExtension.swift */,
+				5CF3AF5222BA9C7A00D965CE /* UIColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5CF3AF5322BA9C7A00D965CE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CF3AF5422BA9C7A00D965CE /* RSSItem.swift */,
+				5CF3AF5522BA9C7A00D965CE /* RSSList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C008B72D42BFA71CC643952E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F03E68C66688EFA3E766AD2 /* Pods_RunloopRSS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5CF3A9D022BA64CD00D965CE /* RunloopRSS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CF3A9E322BA64CF00D965CE /* Build configuration list for PBXNativeTarget "RunloopRSS" */;
+			buildPhases = (
+				0C62D9CE3C186A70D4C388B4 /* [CP] Check Pods Manifest.lock */,
+				5CF3A9CD22BA64CD00D965CE /* Sources */,
+				5CF3A9CE22BA64CD00D965CE /* Frameworks */,
+				5CF3A9CF22BA64CD00D965CE /* Resources */,
+				C4E6BF03DAC3FACC280DD043 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RunloopRSS;
+			productName = RunloopRSS;
+			productReference = 5CF3A9D122BA64CD00D965CE /* RunloopRSS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5CF3A9C922BA64CD00D965CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = MWDN;
+				TargetAttributes = {
+					5CF3A9D022BA64CD00D965CE = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 5CF3A9CC22BA64CD00D965CE /* Build configuration list for PBXProject "RunloopRSS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5CF3A9C822BA64CD00D965CE;
+			productRefGroup = 5CF3A9D222BA64CD00D965CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5CF3A9D022BA64CD00D965CE /* RunloopRSS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5CF3A9CF22BA64CD00D965CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF3A9DF22BA64CF00D965CE /* LaunchScreen.storyboard in Resources */,
+				5CF3AA2B22BA92F800D965CE /* Details.storyboard in Resources */,
+				5CF3AA2622BA92F800D965CE /* MovieTitleTableViewCell.xib in Resources */,
+				5CF3A9DC22BA64CF00D965CE /* Assets.xcassets in Resources */,
+				5CF3AA1F22BA92F800D965CE /* FeedItemTableViewCell.xib in Resources */,
+				5CF3AA2322BA92F800D965CE /* RSSList.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C62D9CE3C186A70D4C388B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RunloopRSS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4E6BF03DAC3FACC280DD043 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunloopRSS/Pods-RunloopRSS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunloopRSS/Pods-RunloopRSS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RunloopRSS/Pods-RunloopRSS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5CF3A9CD22BA64CD00D965CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF3AF5922BA9C7A00D965CE /* UIViewControllerExtensions.swift in Sources */,
+				5CF3AF5622BA9C7A00D965CE /* NSErrorExtension.swift in Sources */,
+				5CF3A9D522BA64CD00D965CE /* AppDelegate.swift in Sources */,
+				5C3E201222BD17B300CD5C5B /* URNNetworking.swift in Sources */,
+				5CF3AA2822BA92F800D965CE /* DetailsScreen.swift in Sources */,
+				5CF3AA2422BA92F800D965CE /* RSSListScreen.swift in Sources */,
+				5CF3AF5E22BA9C7A00D965CE /* RSSList.swift in Sources */,
+				5CF3AF5C22BA9C7A00D965CE /* UIColorExtensions.swift in Sources */,
+				5CF3AA2A22BA92F800D965CE /* DetailsView.swift in Sources */,
+				5C3E201022BD17B300CD5C5B /* URNNetworkingConstants.swift in Sources */,
+				5CF3AF5822BA9C7A00D965CE /* UITableViewExtension.swift in Sources */,
+				5CF3AA2922BA92F800D965CE /* DetailsPresenter.swift in Sources */,
+				5CF3AA2122BA92F800D965CE /* RSSListPresenter.swift in Sources */,
+				5CF3AA2022BA92F800D965CE /* FeedItemTableViewCell.swift in Sources */,
+				5CF3A9EB22BA82DD00D965CE /* AppRouter.swift in Sources */,
+				5CF3AF5722BA9C7A00D965CE /* DateTimeTools.swift in Sources */,
+				5CF3AF5D22BA9C7A00D965CE /* RSSItem.swift in Sources */,
+				5CF3AA2722BA92F800D965CE /* MovieTitleTableViewCell.swift in Sources */,
+				5CF3AF5B22BA9C7A00D965CE /* StringExtension.swift in Sources */,
+				5CF3AF5A22BA9C7A00D965CE /* UIViewExtensions.swift in Sources */,
+				5CF3AA2C22BA92F800D965CE /* DetailsViewController.swift in Sources */,
+				5CF3AA2222BA92F800D965CE /* RSSListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5CF3A9DD22BA64CF00D965CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CF3A9DE22BA64CF00D965CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5CF3A9E122BA64CF00D965CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5CF3A9E222BA64CF00D965CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5CF3A9E422BA64CF00D965CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66D799D2E1F32A5DE3AD1FC4 /* Pods-RunloopRSS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q383P73MVG;
+				INFOPLIST_FILE = RunloopRSS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwdn.RunloopRSS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "For all applications";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5CF3A9E522BA64CF00D965CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F1E90EC6849A9388F6E1764 /* Pods-RunloopRSS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = RunloopRSS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwdn.RunloopRSS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5CF3A9CC22BA64CD00D965CE /* Build configuration list for PBXProject "RunloopRSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CF3A9E122BA64CF00D965CE /* Debug */,
+				5CF3A9E222BA64CF00D965CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CF3A9E322BA64CF00D965CE /* Build configuration list for PBXNativeTarget "RunloopRSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CF3A9E422BA64CF00D965CE /* Debug */,
+				5CF3A9E522BA64CF00D965CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5CF3A9C922BA64CD00D965CE /* Project object */;
+}
