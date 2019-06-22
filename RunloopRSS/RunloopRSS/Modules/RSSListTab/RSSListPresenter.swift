@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FeedKit
 
 enum FeedType: Int {
     case business = 0
@@ -15,26 +16,39 @@ enum FeedType: Int {
 
 
 protocol RSSListViewOutput: class {
-    func loadFeed(type: FeedType)
-    func showDetails(movie: RSSItem)
+    func loadFeed(type: FeedType, animated: Bool)
+    func showDetails(rssItem: RSSFeedItem)
+    func startPeriodicalUpdate()
+    func stopPeriodicalUpdate()
+    
 }
 
 final class RSSListPresenter {
-    
+    private let kPeriodicalUdpateTimeInterval: TimeInterval = 3
     private var router: RSSListRouter?
-    
     private weak var view: RSSListView?
+    private var timer: Timer?
+    private var feedType: FeedType = .business
+    private var isUpdating: Bool = false
     
 }
 
 extension RSSListPresenter: RSSListViewOutput {
     
 
-    func loadFeed(type: FeedType) {
-        view?.showSpinner()
+    func loadFeed(type: FeedType, animated: Bool) {
+        guard !isUpdating else { return }
+        isUpdating = true
+        self.feedType = type
+        if animated {
+            view?.showSpinner()
+        }
         URNNetworking.fetchRSSFeed(type: type) { [weak self] (feed, error) in
             DispatchQueue.main.async {
-                self?.view?.dismissSpinner()
+                self?.isUpdating = false
+                if animated {
+                    self?.view?.dismissSpinner()
+                }
                 if let error = error {
                     self?.view?.showAlert(title: "Error", message: error.localizedDescription)
                     return
@@ -44,9 +58,21 @@ extension RSSListPresenter: RSSListViewOutput {
         }
     }
 
-    func showDetails(movie: RSSItem) {
-        router?.showDetails(movie: movie)
+    func showDetails(rssItem: RSSFeedItem) {
+        router?.showDetails(rssItem: rssItem)
     }
+    
+    func startPeriodicalUpdate() {
+        timer = Timer.scheduledTimer(withTimeInterval: kPeriodicalUdpateTimeInterval, repeats: true, block: { [weak self] (timer) in
+            self?.loadFeed(type: self?.feedType ?? .business, animated: false)
+        })
+    }
+    
+    func stopPeriodicalUpdate() {
+        timer?.invalidate()
+        timer = nil
+    }
+
 }
 
 extension RSSListPresenter {

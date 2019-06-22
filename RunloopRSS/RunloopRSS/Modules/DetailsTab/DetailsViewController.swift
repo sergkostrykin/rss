@@ -7,6 +7,17 @@
 //
 
 import UIKit
+import FeedKit
+
+protocol DetailsView: class {
+    
+    func refresh(feedItem: RSSFeedItem?)
+    func refreshTimeLabel()
+    func showAlert(title: String?, message: String?)
+    func showSpinner()
+    func dismissSpinner()
+}
+
 
 final class DetailsViewController: UIViewController {
     
@@ -17,36 +28,35 @@ final class DetailsViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var gradientView: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     // MARK: - Actions
-
-    @IBAction func backButtonClicked(_ sender: UIButton) {
-        output?.back()
-    }
     
     // MARK: - Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(cells: ["MovieTitleTableViewCell"])
-
         output?.didLoad()
     }
     
-    private func reload() {
-        tableView.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshTimeLabel()
         gradientView.setGradient()
-        let placeholder = UIImage(named: "placeholder")
-        if let urlString = movie?.posterPath {
-//            let url = "\(Environment.imageUrl)\(urlString)"
-//            posterImageView.kf.setImage(with: url.asURL, placeholder: placeholder)
-        } else {
-            posterImageView.image = placeholder
-        }
+        output?.startPeriodicalUpdate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        output?.stopPeriodicalUpdate()
+    }
+    
+    private func reload() {
+        gradientView.setGradient()
     }
 }
 
@@ -62,33 +72,13 @@ extension DetailsViewController: DetailsView {
     func showSpinner() {}
     func dismissSpinner() {}
 
-    func refresh(movie: RSSItem?) {
-        self.movie = movie
-        reload()
-    }
-}
-
-extension DetailsViewController: UITableViewDataSource {
-    
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+    func refresh(feedItem: RSSFeedItem?) {
+        descriptionLabel.text = feedItem?.description
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTitleTableViewCell", for: indexPath) as? MovieTitleTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.setup(movie: movie)
-        return cell
-        
+    func refreshTimeLabel() {
+        let date = Date()
+        dateLabel.text = date.releaseDateString
+        timeLabel.text = date.timeDateString
     }
 }

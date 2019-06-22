@@ -8,11 +8,14 @@
 
 import UIKit
 import SVProgressHUD
+import FeedKit
 
 class AppRouter: NSObject {
     
     // MARK: - Properties
     let window: UIWindow?
+    var mainController: UITabBarController?
+    var detailsScreen: DetailsScreen?
     
     // MARK: - init
     init? (window: UIWindow?) {
@@ -29,31 +32,29 @@ class AppRouter: NSObject {
     
     private func showAppropriateView() {
         
-        var viewControllers = [UIViewController]()
+        let tabBarController = UITabBarController()
+        var navigationControllers = [UIViewController]()
 
-        let detailsTab = DetailsScreen().instantiateViewController()
+        var viewControllers = [UIViewController]()
+        
+        let details = DetailsScreen()
+        let detailsTab = details.instantiateViewController()
         detailsTab.tabBarItem = UITabBarItem(title: "Details", image: UIImage(named: "tab_info"), selectedImage: UIImage(named: "tab_info"))
         viewControllers.append(detailsTab)
-        
+        self.detailsScreen = details
 
-        let rssListTab = RSSListScreen().instantiateViewController()
+        let rssListTab = RSSListScreen(appRouter: self).instantiateViewController()
         rssListTab.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(named: "tab_rss"), selectedImage: UIImage(named: "tab_rss"))
         viewControllers.append(rssListTab)
         
-        createTabBarController(viewControllers: viewControllers)
-    }
-    
-    private func createTabBarController(viewControllers: [UIViewController]) {
-        let tabbarController = UITabBarController()
-        var navigationControllers = [UIViewController]()
-
         for controller in viewControllers {
             let navigation = UINavigationController(rootViewController: controller)
             navigation.setNavigationBarHidden(true, animated: false)
             navigationControllers.append(navigation)
         }
-        tabbarController.viewControllers = navigationControllers
-        animateTransition(to: tabbarController)
+        tabBarController.viewControllers = navigationControllers
+        animateTransition(to: tabBarController)
+        mainController = tabBarController
     }
     
     func customizeHUD() {
@@ -69,6 +70,11 @@ class AppRouter: NSObject {
     
     class func hideHUD() {
         SVProgressHUD.dismiss()
+    }
+    
+    func showFeedItemDetail(feedItem: RSSFeedItem) {
+        mainController?.selectedIndex = 0
+        detailsScreen?.reload(rssItem: feedItem)
     }
 
 

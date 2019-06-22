@@ -24,9 +24,20 @@ extension Date {
         formatter.dateFormat = "MMM dd, yyyy"
         return formatter
     }()
-    
+
+    /// Returns Date Formatter for date in format MM dd yyyy
+    static let timeDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm:ss"
+        return formatter
+    }()
+
     var releaseDateString: String {
         return Date.releaseDateFormatter.string(from: self)
+    }
+
+    var timeDateString: String {
+        return Date.timeDateFormatter.string(from: self)
     }
 
 }

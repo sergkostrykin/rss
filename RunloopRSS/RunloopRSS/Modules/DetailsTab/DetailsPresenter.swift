@@ -7,47 +7,44 @@
 //
 
 import Foundation
-//import URNNetworking
+import FeedKit
 
 protocol DetailsViewOutput: class {
     func didLoad()
     func back()
+    func startPeriodicalUpdate()
+    func stopPeriodicalUpdate()
 }
 
 final class DetailsPresenter {
+
+    var movie: RSSItem?
+    private let kPeriodicalUdpateTimeInterval: TimeInterval = 1
     private var router: DetailsRouter?
     private weak var view: DetailsView?
-    
-    var movie: RSSItem?
+    private var timer: Timer?
     
     
     init(movie: RSSItem?) {
         self.movie = movie
     }
     
-
+    func startPeriodicalUpdate() {
+        timer = Timer.scheduledTimer(withTimeInterval: kPeriodicalUdpateTimeInterval, repeats: true, block: { [weak self] (timer) in
+            self?.view?.refreshTimeLabel()
+        })
+    }
+    
+    func stopPeriodicalUpdate() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func reload(rssItem: RSSFeedItem) {
+        view?.refresh(feedItem: rssItem)
+    }
+    
     func loadDetails() {
-//        guard let id = movie?.id else { return }
-//        view?.showSpinner()
-//        URNNetworking.fetchPhotos { [weak self] (json, error) in
-//            DispatchQueue.main.async {
-//                self?.view?.dismissSpinner()
-//                if let error = error {
-//                    self?.view?.showAlert(title: "Error", message: error.localizedDescription)
-//                    return
-//                }
-//                do {
-//                    let jsonData = try JSONSerialization.data(withJSONObject: json ?? [:], options: .prettyPrinted)
-//                    let movie = try JSONDecoder().decode(Movie?.self, from: jsonData)
-//                    self?.view?.refresh(movie: movie)
-//                } catch {
-//                    DispatchQueue.main.async {
-//                       self?.view?.showAlert(title: "Error", message: error.localizedDescription)
-//                    }
-//                    print(error)
-//                }
-//            }
-//        }
     }
 
 }

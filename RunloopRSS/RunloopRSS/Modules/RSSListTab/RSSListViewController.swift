@@ -28,7 +28,6 @@ final class RSSListViewController: UIViewController {
         return feed?.items ?? [RSSFeedItem]()
     }
     
-
     // MARK: - Outlets
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var segmentBackgroundView: UIView!
@@ -52,9 +51,19 @@ final class RSSListViewController: UIViewController {
         reload()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        output?.startPeriodicalUpdate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        output?.stopPeriodicalUpdate()
+    }
+    
     private func reload() {
         let type = FeedType(rawValue: segmentedControl.selectedSegmentIndex) ?? .business
-        output?.loadFeed(type: type)
+        output?.loadFeed(type: type, animated: true)
     }
 }
 
@@ -105,5 +114,7 @@ extension RSSListViewController: UITableViewDataSource {
 
 extension RSSListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        output?.showDetails(rssItem: item)
     }
 }

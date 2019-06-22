@@ -23,7 +23,6 @@
 		5CF3AA2722BA92F800D965CE /* MovieTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1922BA92F800D965CE /* MovieTitleTableViewCell.swift */; };
 		5CF3AA2822BA92F800D965CE /* DetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1A22BA92F800D965CE /* DetailsScreen.swift */; };
 		5CF3AA2922BA92F800D965CE /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1B22BA92F800D965CE /* DetailsPresenter.swift */; };
-		5CF3AA2A22BA92F800D965CE /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1C22BA92F800D965CE /* DetailsView.swift */; };
 		5CF3AA2B22BA92F800D965CE /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1D22BA92F800D965CE /* Details.storyboard */; };
 		5CF3AA2C22BA92F800D965CE /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AA1E22BA92F800D965CE /* DetailsViewController.swift */; };
 		5CF3AF5622BA9C7A00D965CE /* NSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF3AF4C22BA9C7A00D965CE /* NSErrorExtension.swift */; };
@@ -58,7 +57,6 @@
 		5CF3AA1922BA92F800D965CE /* MovieTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTitleTableViewCell.swift; sourceTree = "<group>"; };
 		5CF3AA1A22BA92F800D965CE /* DetailsScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsScreen.swift; sourceTree = "<group>"; };
 		5CF3AA1B22BA92F800D965CE /* DetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
-		5CF3AA1C22BA92F800D965CE /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		5CF3AA1D22BA92F800D965CE /* Details.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		5CF3AA1E22BA92F800D965CE /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		5CF3AF4C22BA9C7A00D965CE /* NSErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtension.swift; sourceTree = "<group>"; };
@@ -198,7 +196,6 @@
 				5CF3AA1722BA92F800D965CE /* Cells */,
 				5CF3AA1A22BA92F800D965CE /* DetailsScreen.swift */,
 				5CF3AA1B22BA92F800D965CE /* DetailsPresenter.swift */,
-				5CF3AA1C22BA92F800D965CE /* DetailsView.swift */,
 				5CF3AA1D22BA92F800D965CE /* Details.storyboard */,
 				5CF3AA1E22BA92F800D965CE /* DetailsViewController.swift */,
 			);
@@ -371,7 +368,6 @@
 				5CF3AA2422BA92F800D965CE /* RSSListScreen.swift in Sources */,
 				5CF3AF5E22BA9C7A00D965CE /* RSSList.swift in Sources */,
 				5CF3AF5C22BA9C7A00D965CE /* UIColorExtensions.swift in Sources */,
-				5CF3AA2A22BA92F800D965CE /* DetailsView.swift in Sources */,
 				5C3E201022BD17B300CD5C5B /* URNNetworkingConstants.swift in Sources */,
 				5CF3AF5822BA9C7A00D965CE /* UITableViewExtension.swift in Sources */,
 				5CF3AA2922BA92F800D965CE /* DetailsPresenter.swift in Sources */,

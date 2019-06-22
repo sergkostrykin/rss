@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import FeedKit
 
 protocol RSSListRouter {
-    func showDetails(movie: RSSItem)
+    
+    func showDetails(rssItem: RSSFeedItem)
 }
 
 final class RSSListScreen {
+    
     private weak var viewController: RSSListViewController?
     private weak var presenter: RSSListPresenter?
+    private var appRouter: AppRouter
+    
+    init(appRouter: AppRouter) {
+        self.appRouter = appRouter
+    }
     
     func instantiateViewController() -> RSSListViewController {
         guard let viewController = UIStoryboard(name: "RSSList", bundle: nil).instantiateViewController(withIdentifier: "RSSListViewController") as? RSSListViewController else { fatalError("Failed to load RSSListViewСontroller") }
@@ -37,8 +45,8 @@ final class RSSListScreen {
 
 extension RSSListScreen: RSSListRouter {
     
-    func showDetails(movie: RSSItem) {
-        DetailsScreen().push(to: viewController?.navigationController)
+    func showDetails(rssItem: RSSFeedItem) {
+        appRouter.showFeedItemDetail(feedItem: rssItem)
     }
 
 }

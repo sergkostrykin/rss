@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FeedKit
 
 protocol DetailsRouter {
     func routeBack()
 }
 
 final class DetailsScreen {
+
     private weak var viewController: DetailsViewController?
     private weak var presenter: DetailsPresenter?
     private var movie: RSSItem?
@@ -38,6 +40,10 @@ final class DetailsScreen {
         to?.pushViewController(instantiateViewController(), animated: animated)
     }
     
+    func reload(rssItem: RSSFeedItem) {
+        presenter?.reload(rssItem: rssItem)
+    }
+    
 }
 
 extension DetailsScreen: DetailsRouter {
@@ -45,4 +51,5 @@ extension DetailsScreen: DetailsRouter {
     func routeBack() {
         viewController?.navigationController?.popViewController(animated: true)
     }
+    
 }
